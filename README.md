@@ -227,6 +227,7 @@ streamlit run dashboard.py        # Pressing Intelligence Dashboard
 | `phase2_graph_analysis.py` | Per-match and per-season networks, centralities and Pressing Vulnerability Score (PVS) |
 | `phase3_validation.py` | Cross-validated Tactical Criticality Score (TCS), validation statistics, attack curves, figures |
 | `dashboard.py` | Streamlit dashboard: pitch map, press simulation, two-team comparison |
+| `pitch_component.py` | The dashboard's interactive pitch (custom Streamlit component: click-to-press, live tiles, target list) |
 | `results/` | Score tables, `results_summary.json` and `figures/` |
 | `deliverables/` | Mid-project update and final report (Word), presentation (PowerPoint) and the script that builds the slides |
 
