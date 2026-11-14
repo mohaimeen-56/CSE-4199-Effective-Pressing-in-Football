@@ -1,0 +1,591 @@
+{
+  "dataset": {
+    "matches": 120,
+    "team_match_networks": 240,
+    "player_match_rows": 3321,
+    "unique_players": 1200,
+    "unique_teams": 66,
+    "matches_by_competition": {
+      "Champions League 2018/19": 1,
+      "FIFA World Cup 2018": 14,
+      "La Liga 2018/19": 34,
+      "La Liga 2019/20": 33,
+      "Premier League 2003/04": 38
+    },
+    "mean_players_per_network": 13.8375,
+    "mean_edges_per_network": 77.3875,
+    "mean_clustering": 0.6839866864011209,
+    "mean_path_length": 1.57303461006586,
+    "mean_diameter": 3.2291666666666665,
+    "min_pass_threshold": 2,
+    "label_agreement_rho": 0.8266758045750081,
+    "old_label_vs_true_rho": 0.510484499065765
+  },
+  "tcs_weights": {
+    "degree": 0.3268544521774949,
+    "betweenness": 0.0995346881505921,
+    "closeness": 0.16759620693429336,
+    "eigenvector": 0.4060146527376197
+  },
+  "tcs_weight_fold_sd": {
+    "degree": 0.0071418119535624006,
+    "betweenness": 0.009915056372578368,
+    "closeness": 0.008288431615333547,
+    "eigenvector": 0.011081811556294466
+  },
+  "holdout_premier_league": {
+    "weights": {
+      "degree": 0.3671822062496276,
+      "betweenness": 0.1037241140393955,
+      "closeness": 0.19750043264212097,
+      "eigenvector": 0.3315932470688559
+    },
+    "mean_rho": 0.7951788150942601,
+    "ci_low": 0.7651756810979989,
+    "ci_high": 0.8212853110105061,
+    "share_positive": 1.0,
+    "n_networks": 76,
+    "wilcoxon_p": 3.6053479686626766e-14
+  },
+  "validation": {
+    "degree": {
+      "mean_rho": 0.7596570439779363,
+      "ci_low": 0.7434944087107187,
+      "ci_high": 0.7747990896946296,
+      "share_positive": 1.0,
+      "n_networks": 240,
+      "wilcoxon_p": 4.015256434384509e-41,
+      "pooled_rho": 0.7571073788787882,
+      "pooled_p": 0.0,
+      "mean_rho_pressed_passes": 0.6869961672600774,
+      "mean_rho_starters_only": 0.6207933158946422,
+      "partial_rho_given_volume": 0.23704199099510706,
+      "partial_p": 1.2195402932919136e-43,
+      "mean_rho_press_rate": 0.12494450834775961,
+      "press_rate_wilcoxon_p": 7.336568396304179e-10
+    },
+    "betweenness": {
+      "mean_rho": 0.6722396642759721,
+      "ci_low": 0.6506385608126721,
+      "ci_high": 0.6923336485265943,
+      "share_positive": 1.0,
+      "n_networks": 240,
+      "wilcoxon_p": 4.015256434384509e-41,
+      "pooled_rho": 0.5970188281494545,
+      "pooled_p": 0.0,
+      "mean_rho_pressed_passes": 0.5820984650402234,
+      "mean_rho_starters_only": 0.5648873144138625,
+      "partial_rho_given_volume": 0.05900257589721649,
+      "partial_p": 0.0006692126915060613,
+      "mean_rho_press_rate": 0.06622662188218434,
+      "press_rate_wilcoxon_p": 0.0005223278520043315
+    },
+    "closeness": {
+      "mean_rho": 0.7585385217619006,
+      "ci_low": 0.7409520775905201,
+      "ci_high": 0.7761282624549406,
+      "share_positive": 1.0,
+      "n_networks": 240,
+      "wilcoxon_p": 4.0147460501432863e-41,
+      "pooled_rho": 0.6821054070558544,
+      "pooled_p": 0.0,
+      "mean_rho_pressed_passes": 0.6775241872812783,
+      "mean_rho_starters_only": 0.6244782825154416,
+      "partial_rho_given_volume": 0.2587095165573026,
+      "partial_p": 6.294644514193567e-52,
+      "mean_rho_press_rate": 0.14066790339206048,
+      "press_rate_wilcoxon_p": 2.8332454552212707e-12
+    },
+    "eigenvector": {
+      "mean_rho": 0.7672511083543399,
+      "ci_low": 0.748549763946401,
+      "ci_high": 0.7849045107860317,
+      "share_positive": 1.0,
+      "n_networks": 240,
+      "wilcoxon_p": 4.014903084690359e-41,
+      "pooled_rho": 0.7282367753441124,
+      "pooled_p": 0.0,
+      "mean_rho_pressed_passes": 0.6895495296314291,
+      "mean_rho_starters_only": 0.637089027262792,
+      "partial_rho_given_volume": 0.23929643001545875,
+      "partial_p": 1.8265405856028812e-44,
+      "mean_rho_press_rate": 0.1315120123840656,
+      "press_rate_wilcoxon_p": 4.970960699310296e-10
+    },
+    "pvs": {
+      "mean_rho": 0.7596379833469535,
+      "ci_low": 0.7432819331366606,
+      "ci_high": 0.775952159945043,
+      "share_positive": 1.0,
+      "n_networks": 240,
+      "wilcoxon_p": 4.015020864542448e-41,
+      "pooled_rho": 0.6789332547397426,
+      "pooled_p": 0.0,
+      "mean_rho_pressed_passes": 0.6717711410920517,
+      "mean_rho_starters_only": 0.6241879547051151,
+      "partial_rho_given_volume": 0.1695663272745375,
+      "partial_p": 7.613218202510513e-23,
+      "mean_rho_press_rate": 0.0923988401304304,
+      "press_rate_wilcoxon_p": 2.5766717189198777e-06
+    },
+    "tcs_oof": {
+      "mean_rho": 0.7899316474426563,
+      "ci_low": 0.7747104429247883,
+      "ci_high": 0.8055693652397634,
+      "share_positive": 1.0,
+      "n_networks": 240,
+      "wilcoxon_p": 4.0150601252442064e-41,
+      "pooled_rho": 0.7419289326005738,
+      "pooled_p": 0.0,
+      "mean_rho_pressed_passes": 0.704684662886756,
+      "mean_rho_starters_only": 0.6713903932055042,
+      "partial_rho_given_volume": 0.27044173741133304,
+      "partial_p": 9.303330909195468e-57,
+      "mean_rho_press_rate": 0.1338299076024914,
+      "press_rate_wilcoxon_p": 7.139628887637017e-11
+    },
+    "involvement": {
+      "mean_rho": 0.7807531792792824,
+      "ci_low": 0.7653059730299966,
+      "ci_high": 0.7969154413924465,
+      "share_positive": 1.0,
+      "n_networks": 240,
+      "wilcoxon_p": 4.0150601252442064e-41,
+      "pooled_rho": 0.7808760515246709,
+      "pooled_p": 0.0,
+      "mean_rho_pressed_passes": 0.691460553388007,
+      "mean_rho_starters_only": 0.6581410997698983
+    }
+  },
+  "pvs_vs_tcs_rho": 0.9300866444994791,
+  "centrality_intercorrelation": {
+    "degree": {
+      "degree": 1.0,
+      "betweenness": 0.672,
+      "closeness": 0.826,
+      "eigenvector": 0.776,
+      "pvs": 0.765,
+      "involvement": 0.922
+    },
+    "betweenness": {
+      "degree": 0.672,
+      "betweenness": 1.0,
+      "closeness": 0.459,
+      "eigenvector": 0.734,
+      "pvs": 0.818,
+      "involvement": 0.686
+    },
+    "closeness": {
+      "degree": 0.826,
+      "betweenness": 0.459,
+      "closeness": 1.0,
+      "eigenvector": 0.625,
+      "pvs": 0.509,
+      "involvement": 0.885
+    },
+    "eigenvector": {
+      "degree": 0.776,
+      "betweenness": 0.734,
+      "closeness": 0.625,
+      "eigenvector": 1.0,
+      "pvs": 0.877,
+      "involvement": 0.8
+    },
+    "pvs": {
+      "degree": 0.765,
+      "betweenness": 0.818,
+      "closeness": 0.509,
+      "eigenvector": 0.877,
+      "pvs": 1.0,
+      "involvement": 0.754
+    },
+    "involvement": {
+      "degree": 0.922,
+      "betweenness": 0.686,
+      "closeness": 0.885,
+      "eigenvector": 0.8,
+      "pvs": 0.754,
+      "involvement": 1.0
+    }
+  },
+  "top3_overlap": {
+    "mean_overlap": 1.7208333333333334,
+    "chance": 0.6525703983516483,
+    "top1_in_actual_top3": 0.6708333333333333,
+    "top1_chance": 0.2175234661172161
+  },
+  "pressure_concentration_top3": {
+    "press_share": 0.36286395088169976,
+    "volume_share": 0.3596821722139624,
+    "equal_share": 0.21752346611721612,
+    "press_vs_volume_wilcoxon_p": 0.11889145401643793
+  },
+  "pressed_by_tcs_rank": {
+    "pressed": {
+      "1": 19.317,
+      "2": 17.096,
+      "3": 16.462,
+      "4": 14.996,
+      "5": 13.8,
+      "6": 12.788,
+      "7": 11.762,
+      "8": 10.35,
+      "9": 8.467,
+      "10": 7.179,
+      "11": 5.138
+    },
+    "involvement": {
+      "1": 125.988,
+      "2": 112.65,
+      "3": 102.75,
+      "4": 95.338,
+      "5": 87.55,
+      "6": 81.629,
+      "7": 75.3,
+      "8": 64.596,
+      "9": 56.458,
+      "10": 47.842,
+      "11": 38.833
+    },
+    "per_100": {
+      "1": 15.332,
+      "2": 15.176,
+      "3": 16.022,
+      "4": 15.729,
+      "5": 15.762,
+      "6": 15.665,
+      "7": 15.621,
+      "8": 16.023,
+      "9": 14.996,
+      "10": 15.006,
+      "11": 13.23
+    }
+  },
+  "targeted_vs_random": {
+    "mean_eff_loss_random": 0.015212365575756143,
+    "mean_eff_loss_top_tcs": 0.15255712444129627,
+    "mean_eff_loss_worst_case": 0.16930132007557136,
+    "ratio": 10.028494495584937,
+    "share_networks_targeted_worse": 1.0,
+    "wilcoxon_p": 4.015256434384509e-41,
+    "mean_pvs_random": 0.007115333486660876,
+    "mean_pvs_top_tcs": 0.07744724670482421,
+    "by_single_metric": {
+      "degree": 0.13230363642030613,
+      "betweenness": 0.1616181850791839,
+      "closeness": 0.13333297672774166,
+      "eigenvector": 0.14308870595787482
+    },
+    "mean_eff_loss_random_starter": 0.043139621976219115,
+    "ratio_vs_random_starter": 3.5363574702948015,
+    "wilcoxon_p_vs_random_starter": 4.015256434384509e-41,
+    "total_capacity_loss_top_tcs": 0.2755525038183413,
+    "total_capacity_loss_random_starter": 0.18194713205754956,
+    "total_capacity_wilcoxon_p": 4.015256434384509e-41,
+    "top_tcs_is_worst_case": 0.5833333333333334
+  },
+  "attack_curve": {
+    "TCS-targeted": [
+      1.0,
+      0.8474,
+      0.7243,
+      0.6113,
+      0.5001,
+      0.3917
+    ],
+    "Betweenness-targeted": [
+      1.0,
+      0.8384,
+      0.7122,
+      0.5889,
+      0.4711,
+      0.3653
+    ],
+    "Random": [
+      1.0,
+      0.9566,
+      0.9066,
+      0.8488,
+      0.783,
+      0.705
+    ]
+  },
+  "attack_curve_total_capacity": {
+    "TCS-targeted": [
+      1.0,
+      0.7244,
+      0.5222,
+      0.3659,
+      0.2437,
+      0.152
+    ],
+    "Betweenness-targeted": [
+      1.0,
+      0.7167,
+      0.5135,
+      0.3525,
+      0.2298,
+      0.1418
+    ],
+    "Random": [
+      1.0,
+      0.8178,
+      0.6538,
+      0.5082,
+      0.3817,
+      0.2732
+    ]
+  },
+  "threshold_sensitivity": {
+    "min_1_passes": 0.7975217793821915,
+    "min_2_passes": 0.789567218096032,
+    "min_3_passes": 0.7809039942992406
+  },
+  "team_outcome_correlation": {
+    "max_eff_loss": {
+      "rho": -0.16814691039682317,
+      "p": 0.009056083752624304
+    },
+    "max_btw": {
+      "rho": 0.02031932731435848,
+      "p": 0.7541480510171517
+    },
+    "top3_share": {
+      "rho": -0.12256723400554766,
+      "p": 0.05795410345601336
+    },
+    "clustering": {
+      "rho": 0.3800917894129735,
+      "p": 1.1460041672048985e-09
+    },
+    "total_passes": {
+      "rho": 0.4554740181329396,
+      "p": 1.0760111691893216e-13
+    }
+  },
+  "team_outcome_n": 240,
+  "season_top_targets": {
+    "Barcelona La Liga 2018/19": [
+      {
+        "player": "Ivan Rakitić",
+        "appearances": 32,
+        "tcs": 0.945,
+        "pvs": 0.049,
+        "betweenness": 0.087,
+        "eff_loss": 0.113,
+        "pressed_per_match": 18.156
+      },
+      {
+        "player": "Jordi Alba Ramos",
+        "appearances": 33,
+        "tcs": 0.899,
+        "pvs": 0.064,
+        "betweenness": 0.127,
+        "eff_loss": 0.137,
+        "pressed_per_match": 18.121
+      },
+      {
+        "player": "Lionel Andrés Messi Cuccittini",
+        "appearances": 34,
+        "tcs": 0.878,
+        "pvs": 0.035,
+        "betweenness": 0.048,
+        "eff_loss": 0.082,
+        "pressed_per_match": 18.382
+      },
+      {
+        "player": "Gerard Piqué Bernabéu",
+        "appearances": 33,
+        "tcs": 0.848,
+        "pvs": 0.076,
+        "betweenness": 0.118,
+        "eff_loss": 0.131,
+        "pressed_per_match": 11.727
+      },
+      {
+        "player": "Sergio Busquets i Burgos",
+        "appearances": 33,
+        "tcs": 0.846,
+        "pvs": 0.043,
+        "betweenness": 0.01,
+        "eff_loss": 0.083,
+        "pressed_per_match": 16.818
+      },
+      {
+        "player": "Sergi Roberto Carnicer",
+        "appearances": 27,
+        "tcs": 0.8,
+        "pvs": 0.037,
+        "betweenness": 0.093,
+        "eff_loss": 0.109,
+        "pressed_per_match": 18.519
+      },
+      {
+        "player": "Philippe Coutinho Correia",
+        "appearances": 31,
+        "tcs": 0.659,
+        "pvs": 0.024,
+        "betweenness": 0.0,
+        "eff_loss": 0.056,
+        "pressed_per_match": 12.903
+      },
+      {
+        "player": "Arturo Erasmo Vidal Pardo",
+        "appearances": 29,
+        "tcs": 0.658,
+        "pvs": 0.028,
+        "betweenness": 0.0,
+        "eff_loss": 0.036,
+        "pressed_per_match": 15.897
+      }
+    ],
+    "Barcelona La Liga 2019/20": [
+      {
+        "player": "Lionel Andrés Messi Cuccittini",
+        "appearances": 33,
+        "tcs": 0.958,
+        "pvs": 0.06,
+        "betweenness": 0.105,
+        "eff_loss": 0.126,
+        "pressed_per_match": 20.879
+      },
+      {
+        "player": "Sergio Busquets i Burgos",
+        "appearances": 29,
+        "tcs": 0.859,
+        "pvs": 0.046,
+        "betweenness": 0.025,
+        "eff_loss": 0.091,
+        "pressed_per_match": 18.31
+      },
+      {
+        "player": "Gerard Piqué Bernabéu",
+        "appearances": 30,
+        "tcs": 0.858,
+        "pvs": 0.048,
+        "betweenness": 0.106,
+        "eff_loss": 0.138,
+        "pressed_per_match": 11.8
+      },
+      {
+        "player": "Sergi Roberto Carnicer",
+        "appearances": 26,
+        "tcs": 0.787,
+        "pvs": 0.038,
+        "betweenness": 0.025,
+        "eff_loss": 0.082,
+        "pressed_per_match": 16.615
+      },
+      {
+        "player": "Clément Lenglet",
+        "appearances": 23,
+        "tcs": 0.769,
+        "pvs": 0.045,
+        "betweenness": 0.083,
+        "eff_loss": 0.11,
+        "pressed_per_match": 12.522
+      },
+      {
+        "player": "Jordi Alba Ramos",
+        "appearances": 23,
+        "tcs": 0.755,
+        "pvs": 0.027,
+        "betweenness": 0.086,
+        "eff_loss": 0.075,
+        "pressed_per_match": 14.783
+      },
+      {
+        "player": "Ivan Rakitić",
+        "appearances": 28,
+        "tcs": 0.668,
+        "pvs": 0.027,
+        "betweenness": 0.0,
+        "eff_loss": 0.039,
+        "pressed_per_match": 11.214
+      },
+      {
+        "player": "Frenkie de Jong",
+        "appearances": 24,
+        "tcs": 0.634,
+        "pvs": 0.028,
+        "betweenness": 0.0,
+        "eff_loss": 0.034,
+        "pressed_per_match": 18.25
+      }
+    ],
+    "Arsenal Premier League 2003/04": [
+      {
+        "player": "Patrick Vieira",
+        "appearances": 29,
+        "tcs": 1.0,
+        "pvs": 0.072,
+        "betweenness": 0.137,
+        "eff_loss": 0.118,
+        "pressed_per_match": 21.483
+      },
+      {
+        "player": "Robert Pirès",
+        "appearances": 36,
+        "tcs": 0.917,
+        "pvs": 0.065,
+        "betweenness": 0.079,
+        "eff_loss": 0.124,
+        "pressed_per_match": 15.361
+      },
+      {
+        "player": "Thierry Henry",
+        "appearances": 37,
+        "tcs": 0.853,
+        "pvs": 0.035,
+        "betweenness": 0.037,
+        "eff_loss": 0.074,
+        "pressed_per_match": 13.297
+      },
+      {
+        "player": "Laureano Bisan-Etame Mayer",
+        "appearances": 31,
+        "tcs": 0.798,
+        "pvs": 0.039,
+        "betweenness": 0.124,
+        "eff_loss": 0.108,
+        "pressed_per_match": 15.258
+      },
+      {
+        "player": "Ashley Cole",
+        "appearances": 32,
+        "tcs": 0.775,
+        "pvs": 0.038,
+        "betweenness": 0.082,
+        "eff_loss": 0.105,
+        "pressed_per_match": 14.719
+      },
+      {
+        "player": "Gilberto Aparecido da Silva",
+        "appearances": 32,
+        "tcs": 0.774,
+        "pvs": 0.037,
+        "betweenness": 0.008,
+        "eff_loss": 0.072,
+        "pressed_per_match": 12.219
+      },
+      {
+        "player": "Kolo Habib Touré",
+        "appearances": 37,
+        "tcs": 0.657,
+        "pvs": 0.031,
+        "betweenness": 0.039,
+        "eff_loss": 0.054,
+        "pressed_per_match": 8.865
+      },
+      {
+        "player": "Sulzeer Jeremiah ''Sol' Campbell",
+        "appearances": 35,
+        "tcs": 0.605,
+        "pvs": 0.022,
+        "betweenness": 0.042,
+        "eff_loss": 0.038,
+        "pressed_per_match": 5.914
+      }
+    ]
+  }
+}

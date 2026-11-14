@@ -1,4 +1,4 @@
-﻿# A Graph-Based Vulnerability Analysis of Passing Networks for Identifying Optimal Pressing Targets in the English Premier League
+# A Graph-Based Vulnerability Analysis of Passing Networks for Identifying Optimal Pressing Targets in the English Premier League
 
 > **Course:** Project/Thesis — CSE 4199 | **Date:** September 2026
 
@@ -39,11 +39,11 @@ This adversarial framing — well-established in cybersecurity and epidemiology 
 - Does the model's predicted pressing-target ranking correlate with the actual frequency of pressing events recorded in StatsBomb data?
 
 ### Objectives
-- [ ] Construct weighted directed passing networks for Premier League teams from StatsBomb open-access event data.
-- [ ] Compute and compare multiple centrality and robustness metrics to rank players by tactical criticality.
-- [ ] Simulate node removal (pressing scenarios) and quantify resulting network degradation.
-- [ ] Validate predictions against actual StatsBomb pressure event data using Spearman's rank correlation.
-- [ ] Develop an interactive prototype dashboard that visualises a team's pressing vulnerability map on a pitch layout.
+- [x] Construct weighted directed passing networks for Premier League teams from StatsBomb open-access event data.
+- [x] Compute and compare multiple centrality and robustness metrics to rank players by tactical criticality.
+- [x] Simulate node removal (pressing scenarios) and quantify resulting network degradation.
+- [x] Validate predictions against actual StatsBomb pressure event data using Spearman's rank correlation.
+- [x] Develop an interactive prototype dashboard that visualises a team's pressing vulnerability map on a pitch layout.
 
 ---
 
@@ -101,6 +101,9 @@ CSE4199/
 ├── collect_all.py              # Main pipeline: extracts StatsBomb pass & pressure events,
 │                               # builds graph node & edge feature CSVs
 │
+├── cleaner.py                  # Cleans, imputes, deduplicates, and organizes raw datasets
+│                               # into separated scraped_data/ and cleaned_data/ folders
+│
 ├── 02_fbref_scraper.py         # Scrapes per-player season statistics from fbref.com
 │                               # (standard, passing, defense, possession, playing time)
 │
@@ -108,11 +111,19 @@ CSE4199/
 │                               # (Premier League, La Liga, Bundesliga, Serie A)
 │
 ├── Dataset/
-│   ├── Pass_Events_and_Pressure_Call.csv       # Raw pass & pressure events from StatsBomb
-│   ├── pressure_events.csv                     # Isolated pressure events
-│   ├── graph_nodes.csv                         # Node features (player x match)
-│   ├── graph_edges.csv                         # Edge features (passer to recipient per match)
-│   └── La_Liga_15_16_Premier_League_15_16_WC22_Euro20.csv  # Supplementary match data
+│   ├── scraped_data/           # Preserved original/raw datasets from scrapers & APIs
+│   │   ├── Pass_Events_and_Pressure_Call.csv
+│   │   ├── pressure_events.csv
+│   │   ├── graph_nodes.csv
+│   │   ├── graph_edges.csv
+│   │   └── La_Liga_15_16_Premier_League_15_16_WC22_Euro20.csv
+│   │
+│   └── cleaned_data/           # Validated, deduplicated, imputed, and standardized datasets
+│       ├── Pass_Events_and_Pressure_Call.csv
+│       ├── pressure_events.csv
+│       ├── graph_nodes.csv
+│       ├── graph_edges.csv
+│       └── La_Liga_15_16_Premier_League_15_16_WC22_Euro20.csv
 │
 └── Published Papers/
     ├── Football Thesis Proposal.docx
@@ -199,6 +210,37 @@ Downloads historical match result CSVs directly from **football-data.co.uk** —
 **Key output columns:** `home_team`, `away_team`, `home_goals`, `away_goals`, `result`, shots, corners, fouls, cards, betting odds.
 
 **Output:** `data/results/results_<LEAGUE>.csv` + `data/results/ALL_results.csv`
+
+---
+
+## Analysis Pipeline and Results
+
+```bash
+python phase2_graph_analysis.py   # networks, centralities, node-removal scores -> results/
+python phase3_validation.py       # TCS weights, validation, attack simulation, figures -> results/
+streamlit run dashboard.py        # Pressing Intelligence Dashboard
+```
+
+| File | Role |
+|------|------|
+| `network_core.py` | Shared graph construction, centrality, network health, node removal and the pressed-player label |
+| `phase2_graph_analysis.py` | Per-match and per-season networks, centralities and Pressing Vulnerability Score (PVS) |
+| `phase3_validation.py` | Cross-validated Tactical Criticality Score (TCS), validation statistics, attack curves, figures |
+| `dashboard.py` | Streamlit dashboard: pitch map, press simulation, two-team comparison |
+| `results/` | Score tables, `results_summary.json` and `figures/` |
+| `deliverables/` | Mid-project update and final report (Word), presentation (PowerPoint) and the script that builds the slides |
+
+**Headline results** (120 matches, 240 team-match networks):
+
+- Removing the highest-TCS player costs 15.3% of global efficiency, against 4.3% for a random first-eleven player (worse in all 240 networks).
+- After five targeted removals 39% of efficiency remains, against 70% for random removal.
+- TCS vs actual pressing: mean within-team Spearman rho = 0.79 on unseen matches (0.80 on held-out Premier League matches).
+- Pass volume alone reaches rho = 0.78; after controlling for it, TCS keeps a partial correlation of 0.27.
+- Learned TCS weights: eigenvector 0.41, degree 0.33, closeness 0.17, betweenness 0.10.
+
+> **Label note.** StatsBomb pressure events name the player *applying* pressure, so the `pressure_received`
+> column in `graph_nodes.csv` actually counts pressures applied. The analysis rebuilds the label in
+> `network_core.pressed_event_counts` by attributing each pressure event to the opposing player on the ball.
 
 ---
 
